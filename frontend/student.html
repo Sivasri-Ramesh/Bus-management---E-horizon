@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Student</title>
+<!-- <link href="studstyle.css" rel="stylesheet"> -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:25px;
+    min-height:100vh;
+    background:linear-gradient(90deg, #2ecc71 60%, #27ae60 40.1%);
+    padding-bottom:70px;
+}
+
+.container form{
+    padding:20px;
+    width:700px;
+    background:#fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+}
+
+.container form .row .col{
+    flex:1 1 250px;
+}
+
+.container form .row .col .title{
+    font-size: 20px;
+    color:#333;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+    margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+    margin-bottom:10px;
+    display: block;
+}
+
+.container form .row .col .inputBox input{
+    width:100%;
+    border:1px solid #ccc;
+    padding:10px 15px;
+    font-size: 15px;
+    text-transform:none;
+}
+
+.container form .row .col .inputBox input:focus{
+    border:1px solid #000;
+}
+
+.container form .row .col .flex{
+    display: flex;
+    gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+    margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+    width:100%;
+    padding:12px;
+    font-size: 17px;
+    background: #27ae60;
+    color:#fff;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+    background: #2ecc71;
+}
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .navbar img{
+    margin-left:40px;
+    margin-top: 20px;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .navbar {
+    width: 200px;
+    background-color: #333;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    color: #fff;
+  }
+
+  .navbar a {
+    display: block;
+    padding: 50px 20px;
+    text-decoration: none;
+    color: #fff;
+    
+  }
+
+  .navbar a:hover {
+     background-color: rgb(185, 240, 231); 
+    
+  }
+
+  .content {
+    margin-left: 200px;
+    padding: 20px;
+    flex: 1;
+  }
+
+  .content h2 {
+    margin-top: 0;
+  }
+  .item{
+      
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <img src="keclogo.jpg" width="100px" height="100px">
+  <a href="#" onclick="showContent('Profile')">Tansaction Details</a>
+  <a href="#" onclick="showContent('Bus details')">Bus details</a>
+  <a href="#" onclick="showContent('Payment')">Fee payment</a>
+ 
+</div>
+
+<div class="content" id="content">
+  
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+    
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="c1.jpeg" alt="Los Angeles" style="width:100%; max-height: 500px">
+            <div class="carousel-caption">
+              <h1 style="font-size: 36px; font-weight: bold ;color: white;text-align: center;">KONGU ENGINEERING COLLEGE</h1>
+              <h2  font-size: 24px;font-weight: bold; color:black;margin-bottom: 10px;>Contact</h2>
+              <h4 font-size: 18px;  color:black; margin-bottom: 5px; >Perundurai, Erode-638 060, Tamilnadu, India</h4>
+              <h4 font-size: 18px; color:black; margin-bottom: 5px; >Phone : 04294 - 226555, 226666, 226500 </h4>
+            </div>
+          </div>
+    
+          <div class="item">
+            <img src="c2.jpg" alt="Chicago" style="width:100%; max-height: 500px">
+            <div class="carousel-caption">
+              <h1 style="font-size: 36px; font-weight: bold ;color:white;text-align: center;">KONGU ENGINEERING COLLEGE</h1>
+              <h2  font-size: 24px;font-weight: bold; color:black;margin-bottom: 10px;>Contact</h2>
+              <h4 font-size: 18px;  color:black; margin-bottom: 5px; >Perundurai, Erode-638 060, Tamilnadu, India</h4>
+              <h4 font-size: 18px; color:black; margin-bottom: 5px; >Phone : 04294 - 226555, 226666, 226500 </h4>
+            </div>
+          </div>
+        
+          <div class="item">
+            <img src="c3.jpg" alt="New york" style="width:100%; max-height: 500px">
+            <div class="carousel-caption">
+              <h1 style="font-size: 36px; font-weight: bold ;color:white;text-align: center;">KONGU ENGINEERING COLLEGE</h1>
+              <h2  font-size: 24px;font-weight: bold; color:black;margin-bottom: 10px;>Contact</h2>
+              <h4 font-size: 18px;  color:black; margin-bottom: 5px; >Perundurai, Erode-638 060, Tamilnadu, India</h4>
+              <h4 font-size: 18px; color:black; margin-bottom: 5px; >Phone : 04294 - 226555, 226666, 226500 </h4>
+            </div>
+          </div>
+       
+        <div class="item">
+          <img src="kecbus.JPG" alt="New york" style="width:100%; max-height: 500px">
+          <div class="carousel-caption">
+            <h1 style="font-size: 36px; font-weight: bold ;color:white;text-align: center;">KONGU ENGINEERING COLLEGE</h1>
+            <h2  font-size: 24px;font-weight: bold; color:black;margin-bottom: 10px;>Contact</h2>
+            <h4 font-size: 18px;  color:black; margin-bottom: 5px; >Perundurai, Erode-638 060, Tamilnadu, India</h4>
+            <h4 font-size: 18px; color:black; margin-bottom: 5px; >Phone : 04294 - 226555, 226666, 226500 </h4>
+          </div>
+        </div>
+      </div>
+    
+        
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      
+
+    </div>
+
+
+
+<div class="content" id="formContent" style="display: none;">
+  <div class="container">
+    <form action="">
+      <div class="row">
+        <div class="col">
+          <h3 class="title">Billing address</h3>
+
+          <div class="inputBox">
+            <span>Full name :</span>
+            <input type="text" placeholder="name">
+          </div>
+          <div class="inputBox">
+            <span>Email :</span>
+            <input type="email" placeholder="abc@def.com">
+          </div>
+
+          <div class="inputBox">
+            <span>Year of study :</span>
+            <input type="text" placeholder="year">
+          </div>
+
+          <div class="inputBox">
+            <span>Address :</span>
+            <input type="text" placeholder="street -locality">
+          </div>
+          <div class="inputBox">
+            <span> Stopping :</span>
+            <input type="text" placeholder="Erode">
+          </div>
+
+          <div class="inputBox">
+            <span> Zip code :</span>
+            <input type="text" placeholder="123 456">
+          </div>
+        </div>
+
+        <div class="col">
+          <h3 class="title">Payment</h3>
+          <div class="inputBox">
+            <span>Cards accepted :</span>
+            <img src="rtgs.png" alt="" width="100" height="80" >
+            <img src="upi_icon.png" alt="" width="100" height="80" >
+            <img src="creditcard.png" alt="" width="100" height="80" >
+          </div>
+          <div class="inputBox">
+            <span>Name on card :</span>
+            <input type="text" placeholder="mr.john deo">
+          </div>
+
+          <div class="inputBox">
+            <span>Credit card number :</span>
+            <input type="number" placeholder="1111-2222-3333-4444">
+          </div>
+          <div class="inputBox">
+            <span>exp month :</span>
+            <input type="text" placeholder="january">
+          </div>
+
+          <div class="flex">
+            <div class="inputBox">
+              <span>exp year :</span>
+              <input type="number" placeholder="2022">
+            </div>
+            <div class="inputBox">
+              <span>CVV :</span>
+              <input type="text" placeholder="1234`">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <input type="submit" value="proceed to checkout" class="submit-btn">
+    </form>
+  </div>
+</div>
+
+<div class="content" id="busdet" style="display: none;">
+ 
+  
+  <h2>Bus Routes and Facilities</h2>
+
+  <table>
+    <tr>
+      <th>Routes</th>
+      <th>Buses</th>
+    </tr>
+    <tr>
+      <td>Erode - College</td>
+      <td>20 Buses</td>
+    </tr>
+    <tr>
+      <td>Sathyamangalam - College</td>
+      <td>2 Buses</td>
+    </tr>
+    <tr>
+      <td>Gobi - College</td>
+      <td>6 Buses</td>
+    </tr>
+    <tr>
+      <td>Athani - College</td>
+      <td>2 Buses</td>
+    </tr>
+    <tr>
+      <td>Anthiyur - College</td>
+      <td>2 Buses</td>
+    </tr>
+    <tr>
+      <td>Komarapalayam - College</td>
+      <td>2 Buses</td>
+    </tr>
+    <tr>
+      <td>Bhavani - College</td>
+      <td>2 Buses</td>
+    </tr>
+    <tr>
+      <td>Ammapettai - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Edapadi - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Sankagiri - College</td>
+      <td>2 Buses</td>
+    </tr>
+    <tr>
+      <td>Tiruchengode - College</td>
+      <td>3 Buses</td>
+    </tr>
+    <tr>
+      <td>SPB Colony - College</td>
+      <td>2 Buses</td>
+    </tr>
+    <tr>
+      <td>Kodumudi - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Vellakovil - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Kangeyam - College</td>
+      <td>3 Buses</td>
+    </tr>
+    <tr>
+      <td>Palladam - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Tiruppur - College</td>
+      <td>13 Buses</td>
+    </tr>
+    <tr>
+      <td>Avinashi - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Nambiyur - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Appakoodal - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Chennimalai - College</td>
+      <td>2 Buses</td>
+    </tr>
+    <tr>
+      <td>Sivagiri - College</td>
+      <td>2 Buses</td>
+    </tr>
+    <tr>
+      <td>Nathakadiyur - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Thandapalayam - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Getticheviyur - College</td>
+      <td>1 Bus</td>
+    </tr>
+    <tr>
+      <td>Perundurai Bus Stand - College</td>
+      <td>7 Buses</td>
+    
+    </table><br>
+    <table>
+      
+</div>
+
+<script>
+  function showContent(page) {
+    const contentDiv = document.getElementById('content');
+    const formContentDiv = document.getElementById('formContent');
+     const busdetail = document.getElementById('busdet');
+    let content = '';
+
+    switch (page) {
+      case 'Profile':
+        content = '<h2><center>Transaction history</center></h2>';
+        contentDiv.style.display = 'block';
+        formContentDiv.style.display = 'none';
+         busdetail.style.display = 'none';
+        break;
+      case 'Bus details':
+        content = '<h2>About Us</h2><p>We are a company dedicated to providing excellent services.</p>';
+        contentDiv.style.display = 'none';
+        formContentDiv.style.display = 'none';
+         busdetail.style.display = 'block';
+        break;
+      case 'Payment':
+        contentDiv.style.display = 'none';
+        formContentDiv.style.display = 'block';
+         busdetail.style.display = 'none';
+        break;
+      
+      default:
+        content = '<h2></p>';
+        break;
+    }
+
+    contentDiv.innerHTML = content;
+  }
+</script>
+
+</body>
+</html>
